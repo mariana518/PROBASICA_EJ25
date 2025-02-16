@@ -1,5 +1,7 @@
 #Implementar distintos métodos de ordenamiento.
 
+#profe la verdad no supe mucho de como hacer esto TT, me guíe de un código de internet y ya después lo analice 
+
 #Método BubbleSort
 from random import sample 
 # Importamos un Método de la biblioteca random para generar listas aleatorias
