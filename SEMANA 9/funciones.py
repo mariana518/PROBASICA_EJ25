@@ -1,4 +1,4 @@
-'''#### Función Global
+#### Función Global
 
 #def generadorPorMateriaPorPromediosPorGrupo():
 
@@ -45,7 +45,7 @@ pesoNewton = lambda masa, gravedad: masa * gravedad
 print(pesoNewton(49,9.81))
 
 
-'''''
+
 def sumaListaDeNumeros(*args):
     print(type(args))
     suma= sum( i for i in args)
