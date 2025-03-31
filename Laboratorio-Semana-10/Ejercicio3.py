@@ -1,40 +1,27 @@
-
-
-# Función para agregar un nuevo contacto
-def agregar_contacto():
-    nombre = str(input("Ingresa el nombre del contacto: "))
-    numero = str(input("Ingresa el número de teléfono del contacto: "))
-    correo = str(input("Ingresa el correo electrónico del contacto: "))
-
-    '''# Crear la tupla para el contacto y agregarla a la lista
-    contacto = (nombre, numero, correo)
-    agenda.append(contacto)
-    print(f"Contacto '{nombre}' agregado exitosamente.")
-
-# Función para buscar un contacto por nombre
-def buscar_contacto():
-    nombre_a_buscar = str(input("Ingresa el nombre del contacto a buscar: "))
-
-    # Buscar el contacto en la lista
-    encontrado = False
-    for contacto in agenda:
-        if nombre_a_buscar == contacto[0].lower():  # Compara el nombre sin importar mayúsculas/minúsculas
-            print(f"Información del contacto '{contacto[0]}':")
-            print(f"Teléfono: {contacto[1]}")
-            print(f"Correo electrónico: {contacto[2]}")
-            encontrado = True
-            break
+class GestorContactos:
+    def __init__(self):
+        self.contactos = []
+    def agregar_contacto(self, nombre, numero, correo):
+        self.contactos.append((nombre, numero, correo))
+        print(f"Contacto '{nombre}' agregado exitosamente.")
+    def buscar_contacto(self, nombre):
+        for contacto in self.contactos:
+            if contacto[0] == nombre:
+                print(f"Contacto encontrado: Nombre: {contacto[0]}, Número: {contacto[1]}, Correo: {contacto[2]}")
+                return contacto
+        print(f"Contacto '{nombre}' no encontrado.")
+        return None
+    def listar_contactos_ordenados(self):
+        contactos_ordenados = sorted(self.contactos, key=lambda x: x[0])
+        print("Lista de contactos ordenados:")
+        for contacto in contactos_ordenados:
+            print(f"Nombre: {contacto[0]}, Número: {contacto[1]}, Correo: {contacto[2]}")
+if __name__ == "__main__":
+    agenda = GestorContactos()
+    agenda.agregar_contacto("Mariana ", "55545224", "marianaponi@gmail.com")
     
-    if not encontrado:
-        print(f"No se encontró el contacto con el nombre '{nombre_a_buscar}'.")
+    
+    agenda.listar_contactos_ordenados()
+    agenda.buscar_contacto("Mariana")
 
-# Función para listar todos los contactos ordenados alfabéticamente
-def listar_contactos():
-    if not agenda:
-        print("No hay contactos registrados.")
-    else:
-        # Ordenamos la lista por el nombre del contacto (primer elemento de cada tupla)
-        agenda_ordenada = sorted(agenda, key=lambda contacto: contacto[0].lower())
-        print("\nLista de contactos ordenada alfabéticamente:")
-        for i, contacto in enumerate(agenda_ordenada, 1):
-            print(f"{i}. Nombre: {contacto[0]}, Teléfono: {contacto[1]}, Correo: {contacto[2]}")'''
+            
