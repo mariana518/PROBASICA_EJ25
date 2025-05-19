@@ -58,7 +58,7 @@ print(conjunto.issubset(superset))
 #conjunto.remove(5)
 #print(conjunto)
 
-
+conjunto.remove
 #conjunto.symmetric_difference()
 print(conjunto.symmetric_difference(conjunto2))
 
